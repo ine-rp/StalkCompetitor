@@ -1,0 +1,21 @@
+[project]
+name = "stalkcompetitor"
+version = "0.1.0"
+description = "AI powered competitor monitoring using CrewAI"
+authors = [
+    {name = "irodriguez",email = "ines@inesthetechie.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10,<=3.13"
+dependencies = [
+    "crewai (>=0.118.0,<0.119.0)",
+    "flask (>=3.1.0,<4.0.0)",
+    "pyyaml (>=6.0.2,<7.0.0)",
+    "python-dotenv (>=1.1.0,<2.0.0)",
+    "crewai-tools (>=0.43.0,<0.44.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

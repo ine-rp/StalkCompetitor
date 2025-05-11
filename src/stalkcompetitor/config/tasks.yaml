@@ -1,0 +1,56 @@
+search_task:
+  description: |
+    Use online search tools to find the 10 most relevant and recent news articles about {company_name}.
+    Return JSON array:
+    [
+      { "title": "...", "link": "...", "snippet": "..." },
+      ...
+    ]
+  expected_output: "A JSON array with 10 relevant articles (title, link, snippet)."
+  agent: "search_agent"
+  tools: ["search_google"]
+
+good_news_task:
+  description: |
+    Analyze the articles and identify the top 3-5 positive news items about {company_name}.
+    Focus on:
+    - Partnerships, funding rounds, awards
+    - Market expansions, product launches
+    - Positive analyst reviews or press
+
+    Return JSON array:
+    [
+      { "title": "...", "link": "...", "insight": "..." },
+      ...
+    ]
+  expected_output: "A JSON array of 3-5 positive news items with title, link, and insight."
+  agent: "good_news_agent"
+
+bad_news_task:
+  description: |
+    Analyze the articles and identify the top 3-5 negative news items about {company_name}.
+    Focus on:
+    - Layoffs, lawsuits, scandals
+    - Regulatory fines, negative press
+    - Customer backlash or product recalls
+
+    Return JSON array:
+    [
+      { "title": "...", "link": "...", "risk": "..." },
+      ...
+    ]
+  expected_output: "A JSON array of 3-5 negative news items with title, link, and risk explanation."
+  agent: "bad_news_agent"
+
+report_task:
+  description: |
+    Write an executive-level competitor monitoring report summarizing the findings.
+
+    Report structure:
+    1. Executive Summary → 2-3 sentence overview
+    2. Good News → bullet list with headline (link) and insight
+    3. Bad News → bullet list with headline (link) and risk explanation
+
+    Use concise, professional language tailored for executives.
+  expected_output: "A polished business report following the structure."
+  agent: "report_agent"
